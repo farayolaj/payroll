@@ -1,5 +1,7 @@
 package com.example.payroll;
 
+import com.example.payroll.employee.Employee;
+import com.example.payroll.employee.EmployeeRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
@@ -11,8 +13,8 @@ public class LoadDatabase {
     @Bean
     CommandLineRunner initDatabase(EmployeeRepository repository) {
         return args -> {
-            log.info("Preloading {}", repository.save(new Employee("Bilbo Baggins", "burglar")));
-            log.info("Preloading {}", repository.save(new Employee("Frodo Baggins", "thief")));
+            log.info("Preloading {}", repository.save(new Employee("Bilbo", "Bagginss", "burglar")));
+            log.info("Preloading {}", repository.save(new Employee("Frodo", "Baggins", "thief")));
         };
     }
 }
